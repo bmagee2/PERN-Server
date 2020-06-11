@@ -11,7 +11,7 @@ const monologue = require('./controllers/monologuecontroller');
 
 // DATABASE
 const sequelize = require('./db');
-sequelize.sync({force: true});
+sequelize.sync();
 app.use(express.json());
 app.use(require('./middleware/headers'));
 
