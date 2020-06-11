@@ -11,15 +11,15 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: true 
         },
         category: {
-            // type: DataTypes.ENUM,
-            // values: ['Classical', 'Contemporary', 'Shakespearean'],
-            type: DataTypes.STRING,
+            type: DataTypes.ENUM,
+            values: ['Classical', 'Contemporary', 'Shakespearean'],
+            // type: DataTypes.STRING,
             allowNull: false
         },
         genre: {
-            // type: DataTypes.ENUM,
-            // values: ['Drama', 'Comedy'],
-            type: DataTypes.STRING,
+            type: DataTypes.ENUM,
+            values: ['Drama', 'Comedy'],
+            // type: DataTypes.STRING,
             allowNull: true
         },
         sceneSynopsis: {
