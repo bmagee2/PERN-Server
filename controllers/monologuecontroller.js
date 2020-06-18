@@ -6,7 +6,11 @@ const Monologue = require('../db').import('../models/monologue');
 
 // GET ALL MONOLOGUES
 router.get('/get', (req, res) => {
-    Monologue.findAll()
+    Monologue.findAll({
+        where: {
+            owner_id: req.user.id
+        }
+    })
         .then(monologues => res.status(200).json({
             monologues: monologues
         }))
@@ -24,7 +28,8 @@ router.post('/post', (req, res) => {
         genre: req.body.monologue.genre,
         sceneSynopsis: req.body.monologue.sceneSynopsis,
         monologue: req.body.monologue.monologue,
-        notes: req.body.monologue.notes
+        notes: req.body.monologue.notes,
+        owner_id: req.user.id
     }
     Monologue.create(newMonologue)
         .then(monologue => res.status(200).json({

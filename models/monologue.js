@@ -33,6 +33,10 @@ module.exports = (sequelize, DataTypes) => {
         notes: {
             type: DataTypes.TEXT,
             allowNull: true
+        },
+        owner_id: {
+            type: DataTypes.INTEGER,
+            allownull: false
         }
 
     })

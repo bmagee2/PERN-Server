@@ -12,6 +12,8 @@ router.get('/', (req, res) => {
 // SIGN UP
 router.post('/signup', (req, res) => {
     User.create({
+        firstName: req.body.user.firstName,
+        lastName: req.body.user.lastName,
         email: req.body.user.email,
         password: bcrypt.hashSync(req.body.user.password, 10) 
     })
